@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wuxianqiang/vue-backtop.git"
+    "url": "git+https://github.com/wuxianqiang/v-top.git"
   },
   "keywords": [
     "vue",
@@ -17,7 +17,7 @@
   "author": "wuxianqiang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wuxianqiang/vue-backtop/issues"
+    "url": "https://github.com/wuxianqiang/v-top/issues"
   },
-  "homepage": "https://github.com/wuxianqiang/vue-backtop#readme"
+  "homepage": "https://github.com/wuxianqiang/v-top#readme"
 }
