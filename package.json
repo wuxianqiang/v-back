@@ -1,5 +1,5 @@
 {
-  "name": "vue-backtop",
+  "name": "v-top",
   "version": "1.0.0",
   "description": "回到顶部的vue指令",
   "main": "index.js",
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/wuxianqiang/vue-backtop.git"
   },
   "keywords": [
-    "vue"
+    "vue",
+    "v-top"
   ],
   "author": "wuxianqiang",
   "license": "ISC",
