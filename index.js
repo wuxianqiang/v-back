@@ -2,23 +2,26 @@ let Vue;
 const install = (_Vue, options = {}) => {
   Vue = _Vue;
   Vue.directive('back', (el, bindings) => {
-    let position = calculation(bindings.value)
-    let container = window;
+    let scrollPosition = calculation(bindings.value)
+    let eventTarget = window;
+    let scrollContainer = document.documentElement;
     Vue.nextTick(() => {
       if (options.el) {
-        container = document.querySelector(options.el) || window;
+        eventTarget = options.el
+        scrollContainer = document.querySelector(options.el) || document.documentElement;
       }
-      let height = calculation(options.distance)
-      container.height = height
-      container.el = el
-      container.addEventListener('scroll', handleScroll)
-      handleClick(container, el, position, options.duration, options.interval);
+      let appearancePosition = calculation(options.distance)
+      eventTarget.appearancePosition = appearancePosition
+      eventTarget.el = el
+      eventTarget.scrollContainer = scrollContainer
+      eventTarget.addEventListener('scroll', handleScroll)
+      handleClick(eventTarget, el, scrollPosition, options.duration, options.interval);
     })
   })
 }
 
 function handleScroll () {
-  this.el.style.display = this.scrollTop > this.height ? 'block' : 'none'
+  this.el.style.display = this.scrollContainer.scrollTop >= this.appearancePosition ? 'block' : 'none'
 }
 
 function calculation (num = 0) {
@@ -35,21 +38,21 @@ function calculation (num = 0) {
   return res
 }
 
-function handleClick (container, el, position = 0, duration = 300, interval = 10) {
+function handleClick (container, el, scrollPosition = 0, duration = 300, interval = 10) {
   el.addEventListener('click', () => {
     container.removeEventListener('scroll', handleScroll)
-    let distance = container.scrollTop;
+    let distance = container.scrollContainer.scrollTop
     let step = (distance / duration) * interval;
     let timer = setInterval(() => {
-      let curTop = container.scrollTop;
+      let curTop = container.scrollContainer.scrollTop
       curTop -= step;
-      if (curTop <= position) {
+      if (curTop <= scrollPosition) {
         clearInterval(timer);
-        container.scrollTop = position;
+        container.scrollContainer.scrollTop = scrollPosition;
         container.addEventListener('scroll', handleScroll)
         return;
       }
-      container.scrollTop = curTop;
+      container.scrollContainer.scrollTop = curTop;
     }, interval)
   })
 }

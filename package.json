@@ -1,23 +1,25 @@
 {
-  "name": "v-top",
-  "version": "1.0.0",
-  "description": "回到顶部的vue指令",
+  "name": "v-back",
+  "version": "1.0.3",
+  "description": "back to the top",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wuxianqiang/v-top.git"
+    "url": "git+https://github.com/wuxianqiang/v-back.git"
   },
   "keywords": [
     "vue",
-    "v-top"
+    "directive",
+    "back",
+    "top"
   ],
   "author": "wuxianqiang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wuxianqiang/v-top/issues"
+    "url": "https://github.com/wuxianqiang/v-back/issues"
   },
-  "homepage": "https://github.com/wuxianqiang/v-top#readme"
+  "homepage": "https://github.com/wuxianqiang/v-back#readme"
 }
