@@ -1,4 +1,4 @@
-# v-top
+# v-back
 
 back to the top
 
@@ -8,7 +8,7 @@ back to the top
 
 ```bash
 
-$ npm i v-top -S
+$ npm i v-back -D
 
 ```
 
@@ -20,12 +20,12 @@ main.js:
 
 import Vue from 'vue'
 import App from './App.vue'
-import VTop from 'v-top'
+import VBack from 'v-back'
 
-Vue.use(VTop)
+Vue.use(VBack)
 
 // or with options
-Vue.use(VTop, {
+Vue.use(VBack, {
   el: '#wrapper',
   duration: 300
 })
@@ -41,7 +41,7 @@ new Vue({
 template:
 
 ```html
-<span v-top="50">
+<span v-back="50">
   回到顶部
 </span>
 ```

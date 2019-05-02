@@ -1,7 +1,7 @@
 let Vue;
 const install = (_Vue, options = {}) => {
   Vue = _Vue;
-  Vue.directive('top', (el, bindings) => {
+  Vue.directive('back', (el, bindings) => {
     let position = calculation(bindings.value)
     let container = window;
     Vue.nextTick(() => {
