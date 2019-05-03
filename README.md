@@ -63,7 +63,3 @@ Vue.use(VBack, {
 | `el`|scroll container|`window`|`String`|
 |`duration`|Rolling time|`300`|`Number`|
 |`distance`|When does the scrolling element appear?|Always appear|`String`|
-
-1. `el` 是滚动的容器，通过CSS选择器获取页面中的元素。
-2. `duration`是滚动需要的时间。
-3. `distance` 是什么时候开始出现操作的元素，默认是一直出现，传入`100px`表示滚动到100像素之后出现，传入`1page`表示滚动到1屏幕的高度之后出现。
